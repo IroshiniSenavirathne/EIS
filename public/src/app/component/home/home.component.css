@@ -1,0 +1,26 @@
+
+.bgimg{ 
+    background-image:url("../../../assets/img/ele.jpg"); 
+    background-repeat:no-repeat; 
+    background-size:cover;
+}
+
+.top {
+    color: #fffe9a;
+}
+
+.pt{
+    padding-top:150px;
+}
+p{
+    font-size: 20px;
+    color: white;
+    font-family: calibri;
+}
+
+.first{
+    color: #fffe9a;
+    font: italic bold 12px/30px Georgia, serif;
+    font-weight: 1500;
+    text-align: center;
+}

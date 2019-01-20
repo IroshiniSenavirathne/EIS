@@ -1,0 +1,23 @@
+<app-navbar2></app-navbar2>
+
+<!-- <div  class="container">
+    <table class="table table-hover">
+        <tbody>
+          <tr class="row" *ngFor="let file of files">
+            <td *ngIf="file" ><div class="col-sm-12"><a  href="details/{{file._id}}"><img src="http://localhost:3000/content/getimage/{{file.filename}}" alt="" style="width:150px">{{file.elephntname}}</a></div></td>
+          </tr>   
+        </tbody>
+      </table>
+  </div> -->
+  <div class="bg">
+      <div class="container" style="padding-top: 60px">
+          <div class="row portfolio">
+              <div *ngFor="let file of files" class="col-sm-6 col-md-3">
+                  <div  *ngIf="file" class="thumbnail">
+                      <a  href="details/{{file._id}}"> <img class="img-responsive" src="http://localhost:3000/content/getimage/{{file.filename}}" alt="{{file.elephntname}}"/></a>
+                      <div class="name"> {{file.elephntname}} </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+  </div>

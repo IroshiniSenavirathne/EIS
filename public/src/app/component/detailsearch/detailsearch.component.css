@@ -1,0 +1,46 @@
+.form {
+    border-radius: 7px;
+    padding: 6px;
+}
+
+.container {
+    background-color: #f7fdb1;
+}
+
+form_main {
+    width: 100%;
+}
+
+.btn {
+    background: #ecd39b none repeat scroll 0 0;
+    border-color: #f0ad4e;
+    color: black;
+    font-size: 14px;
+}
+
+.portfolio .thumbnail {
+    position: relative;
+  }
+  
+  .portfolio .thumbnail:hover {
+    cursor: pointer;
+  }
+  
+  .portfolio .caption {
+    bottom: 0;
+    position: absolute;
+  }
+  
+  .portfolio .btn {
+    opacity: 0.75;
+  }
+  
+  .bg {
+    background-color: #c6e377;
+  }
+
+  .name {
+      text-align: center;
+  }
+
+  

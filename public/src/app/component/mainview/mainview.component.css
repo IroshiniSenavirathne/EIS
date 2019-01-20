@@ -1,0 +1,28 @@
+.portfolio .thumbnail {
+  position: relative;
+}
+
+.portfolio .thumbnail:hover {
+  cursor: pointer;
+}
+
+.portfolio .caption {
+  bottom: 0;
+  position: absolute;
+}
+
+.portfolio .btn {
+  opacity: 0.75;
+}
+
+.bg {
+  background-color: #c6e377;
+}
+
+.name {
+  text-align: center;
+}
+
+.img-responsive {
+  height: 200px;
+}

@@ -1,0 +1,155 @@
+
+<app-navbar2></app-navbar2>
+<div *ngIf="!Isedit">
+<div *ngIf="details">
+    <legend class="view">View Details</legend>
+
+  <div class="container">
+    <div class="card">
+      <div class="container-fliud">
+        <div class="wrapper row">
+          <div class="preview col-md-6">
+              <div class="preview-pic tab-content">
+              <div class="tab-pane active">
+                <img src="http://localhost:3000/content/getimage/{{this.details.imagename}}" alt=""></div>
+           </div> 
+          </div>   
+            
+                  <div class="details col-md-6">
+                      <div class="panel panel-default text-center">
+                          <h3><div class="panel-title"> Elephant Name</div></h3>
+                          <hr>
+                      <h4>{{this.details.elephntname}}</h4>
+                      </div>
+                      <div class="panel panel-default text-center">
+                          
+                          <h3><div class="panel-title"> Elephant Age</div></h3>
+                          <hr>
+                      <h4>{{this.details.age}}</h4>
+                      </div>
+                      <div class="panel panel-default text-center">
+                          <h3><div class="panel-title"> Elephant  Found Palce</div></h3>
+                          <hr>
+                      <h4>{{this.details.place}}</h4>
+                      </div>
+                      <div class="panel panel-default text-center">
+                          <h3><div class="panel-title">Elephant Gender</div></h3>
+                          <hr>
+                      <h4>{{this.details.gender}}</h4>
+                      </div>
+                      <div class="panel panel-default text-center">
+                          <h3><div class="panel-title">Type of Elephant</div></h3>
+                          <hr>
+                      <h4>{{this.details.type}}</h4>
+                      </div>
+                      <div class="panel panel-default text-center">
+                          <h3><div class="panel-title"> Specific Characteristics</div></h3>
+                          <h4>{{this.details.details}}</h4>
+                      </div>
+
+                      <div *ngIf="IsAdmin">
+                          <div class="col-md-4"><button (click)="deleteDetail(this.details.id)" class="btn btn-primary col-md-12">Delete detail</button></div>   
+                          <div class="col-md-4"><button (click)="EditDetails()" class="btn btn-primary col-md-12">Edit detail</button></div>   
+                      </div>
+                      <div class="col-md-4 pd"><button (click)="onGoBack()" class="btn btn-primary col-md-12">Go Back</button></div>
+            </div>
+
+            
+                <input type="hidden" #imageid value="{{this.details.imageid}}"/>
+                <input type="hidden" #detailid value="{{this.details.id}}"/>
+                <br>
+
+                
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+<div *ngIf="Isedit">
+    <legend class="topic">Edit Details</legend>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <legend>upload image</legend>
+  
+            <div *ngIf="notupload"  class="form-group row">
+            <label for="multiple">Choose file(s)</label>
+            <input type="file" class="form-control-plaintext" name="File" accept="image/* " (change)="fileChange($event)" />
+            </div>
+            <div *ngIf ="!notupload"  class="form-group row">
+               <div class="col-md-9"><img  class="col-md-12" src="http://localhost:3000/content/getimage/{{this.details.imagename}}" alt="" /></div>
+               <div class="col-md-12 im"></div>
+               <input type="hidden" #imagename value="{{this.details.imagename}}"/>
+            </div> 
+            <div  *ngIf="!notupload">
+            <button  class="btn btn-primary" (click)="onDelete()">Change Image</button> 
+           </div>
+
+
+        </div>
+      <div class="col-md-6">
+        <div class="form-main">
+          <div class="form">
+              
+              <div class="form-group">
+                  <label for="staticEmail">Elepant Name</label>
+                  <div><input type="text" class="form-control" [(ngModel)]="this.details.elephntname" >
+                  </div>
+                </div>
+                <div class="form-group">
+                    <label for="staticEmail">Gender</label>
+                    <div>
+                        <select [(ngModel)]="this.details.gender" class="form-control" >
+                            <option value="male">Male</option>
+                            <option value="Female">female</option>
+                          </select>
+                    </div>
+                  </div>
+                <div class="form-group">
+                    <label for="staticEmail">Type</label>
+                    <div>
+                        <select [(ngModel)]="this.details.type" class="form-control">
+                            <option value="calf">Calf</option>
+                            <option value="juvenile">Juvenile</option>
+                            <option value="subadult">Sub-Adult</option>
+                          </select>
+                  </div>
+                  </div>
+          
+                <div class="form-group">
+                    <label for="staticEmail">Age(mounths)</label>
+                    <div>
+                      <input type="text"  class="form-control" pattern= "[0-9]" [(ngModel)]="this.details.age" >
+                    </div>
+                  </div>
+          
+              <div class="form-group">
+                <label for="staticEmail">Place Found</label>
+                <div>
+                <input type="text" class="form-control" [(ngModel)]="this.details.place"  >
+              </div>
+              </div>
+              <div class="form-group">
+                  <label for="staticEmail">Details</label>
+                  <div>
+                    <textarea class="form-control" [(ngModel)]="this.details.details"  ></textarea>
+                  </div>
+                </div>
+          
+               
+              <fieldset class="bt row">
+                  <div class="col-md-6"><button type="submit"  (click)="onUpdate()" class="btn btn-primary col-md-12">Update</button></div>
+                  <div class="col-md-6"><button type="cancel" class="btn btn-primary col-md-12" (click)="onCancel(this.details.id)">Cancel</button></div>
+              </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        
+</div>
+
+
+

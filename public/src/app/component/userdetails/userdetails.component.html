@@ -1,0 +1,59 @@
+<!-- <table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>user role</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users"> 
+            <td>{{ user.fullname }}</td>
+            <td>{{ user.email}}</td>
+            <td>{{ user.userrole}}</td>
+            <td><button (click)="edituserrole(user)">Change role</button></td>
+            <td>
+                <button (click)="deleteuser(user)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table> -->
+
+<app-navbar2></app-navbar2>
+
+<legend class="User">User Details</legend>
+
+<div class="container">
+
+        <div class="listWrap  col-md-offset-2">
+                <ul class="list">
+                        <li>
+                                <span>Name</span>
+                                <span>Email</span>
+                                <span>user role</span>
+                                <span>Action</span>
+                                <span>Delete</span>
+                            </li>
+                            <li *ngFor="let user of users">
+                                <span>{{ user.fullname }}</span>
+                                <span>{{ user.email}}</span>
+                                <span>{{ user.userrole}}</span>
+                                <span>
+                                    <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                        <button (click)="edituserrole(user)" type="button" class="btn btn-default">Change role</button>
+                                    </div>
+                                </span>
+                                <span>
+                                        <div class="btn-group btn-group-xs" role="group" aria-label="...">
+                                            <button (click)="deleteuser(user)" type="button" class="btn btn-default" >Delete</button></div>
+                                </span>
+                            </li>
+
+                </ul>
+                <div class="col-md-6 pd"><button class="btn2 btn-primary col-md-4" (click)="onGoBack()">Go Back</button></div>
+        </div>
+        </div>
+
+        

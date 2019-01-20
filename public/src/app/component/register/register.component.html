@@ -1,0 +1,71 @@
+<div class="overlay" id="LoginForm">
+        <div class="container">
+
+                <div class="login-form">
+                        <div class="main-div">
+                            <div class="panel">
+                                    <h3>Register</h3>
+                                </div>
+    <form id="Register" #f="ngForm" (ngSubmit)="onSubmit(f)" >
+        <fieldset>
+    
+          <div class="form-group">
+                  <input type="text" class="form-control" ngModel name="fname" id="fname" placeholder="Enter Name" required pattern="[a-zA-Z]+" #fname="ngModel">
+                    <div  *ngIf="fname.invalid && (fname.dirty || fname .touched)"class="alert alert-danger">
+        
+                        <div *ngIf="fname.errors.required">
+                         Name Is Required
+                         </div>
+                         <div *ngIf="fname.errors.pattern">
+                            Name is not valid
+                            </div>
+                          </div>
+              
+              
+                
+            </div>
+    
+            <div class="form-group ">
+                    <input type="text"  class="form-control" ngModel required name="uname" id="uname" placeholder="Enter User Name" #uname="ngModel">
+                      <div  *ngIf="uname.invalid && (uname.dirty || uname .touched)"class="alert alert-danger">
+        
+                          <div *ngIf="uname.errors.required">
+                           Username Is Required
+                           </div>
+                           
+                    </div>
+             </div>
+    
+          <div class="form-group">
+                  <input type="email" class="form-control" name="email" ngModel id="email" aria-describedby="emailHelp" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Enter Email" #email="ngModel" >
+                    <div *ngIf="email.invalid && (email.dirty || email .touched)"class="alert alert-danger">
+            
+                        <div *ngIf="email.errors.required">
+                         Email Is Required
+                         </div>
+                         <div *ngIf="email.errors.pattern">
+                            Email not a valid 
+                            </div>
+                         </div>
+          </div>
+
+          <div class="form-group">
+                  <input type="password" class="form-control" name="pswd" ngModel required id="pswd" placeholder="Password" #pswd="ngModel" > 
+                    <div  *ngIf="pswd.invalid && (pswd.dirty || pswd .touched)"class="alert alert-danger">
+            
+                        <div *ngIf="pswd.errors.required">
+                         Password Is Required
+                         </div>
+                         
+                  </div>
+          </div>
+
+
+        </fieldset>
+            <div class="form-group pd"><button type="submit" class="btn btn-primary">Submit</button></div>
+            <div class="form-group pd"><button type="cancel" class="btn btn-primary" (click)="onCancel()">Back</button></div>
+            
+      </form>
+                        </div>
+                        </div>
+</div>

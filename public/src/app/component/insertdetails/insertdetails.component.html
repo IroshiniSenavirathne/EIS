@@ -1,0 +1,111 @@
+<app-navbar2></app-navbar2>
+
+<div class="ig overlay">
+        <legend class="cont">Insert Details</legend>
+        <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                            <div *ngIf="notupload"  class="form-group row">
+                                    <label class="col-md-12" for="multiple">Upload Picture of the Elephant</label>
+                                    <div class="col-md-9"><img class="col-md-12" src="../../../assets/img/ImgUpld.jpg"/></div>
+                                    <div class="col-md-12 im"><input type="file" class="form-control"  name="File" accept="image/* " (change)="fileChange($event)" /></div>
+                                    </div>
+                                    <div *ngIf ="candelete"  class="form-group row">
+                                            <label class="col-md-12" for="multiple">Picture of the Elephant</label>
+                                       <div class="col-md-9"><img class="col-md-12" src="http://localhost:3000/content/getimage/{{image.filename}}" alt=""></div>
+                                       <input type="hidden" #imageid value="{{image.id}}"/>
+                                       <input type="hidden" #imagename value="{{image.filename}}"/>
+                                    </div> 
+                                    <div  *ngIf="candelete">
+                                    <button  class="btn btn-primary" (click)="onDelete()">Change Image</button> 
+                                   </div>
+                        
+                    </div>
+                    <div class="col-md-6">
+                            <div class="form_main">
+                                    <div class="form">
+                                            <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+                                                    <fieldset>
+                                                        <div class="form-group">
+                                                            <label for="staticEmail" >Elepant Name</label>
+                                                            <div>
+                                                              <input type="text" class="form-control" ngModel name="elname" required id="elname" #elname="ngModel">
+                                                              <div *ngIf="elname.invalid && (elname.dirty || elname .touched)"class="alert alert-danger">
+                                                    
+                                                                  <div *ngIf="elname.errors.required">
+                                                                   Elephant Name Is Required
+                                                                   </div>
+                                                                  
+                                                                   </div>
+                                                            </div>
+                                                          </div>
+                                                          <div class="form-group">
+                                                              <label for="staticEmail" >Gender</label>
+                                                              <div>
+                                                                  <select ngModel name="gender" class="form-control">
+                                                                      <option selected="selected" value="male">Male</option>
+                                                                      <option value="Female">female</option>
+                                                                    </select>
+                                                              </div>
+                                                            </div>
+                                                          <div class="form-group">
+                                                              <label for="staticEmail">Type</label>
+                                                              <div>
+                                                                  <select ngModel name="type" class="form-control">
+                                                                      <option selected="selected" value="calf">Calf</option>
+                                                                      <option value="juvenile">Juvenile</option>
+                                                                      <option value="subadult">Sub-Adult</option>
+                                                                    </select>
+                                                            </div>
+                                                            </div>
+                                                    
+                                                          <div class="form-group">
+                                                              <label for="staticEmail">Age(mounths)</label>
+                                                              <div>
+                                                                <input type="text"  class="form-control" required pattern= "[0-9]+" ngModel name="age" id="age" #age="ngModel">
+                                                                <div *ngIf="age.invalid && (age.dirty || age .touched)"class="alert alert-danger">
+                                                    
+                                                                    <div *ngIf="age.errors.required">
+                                                                     Age Is Required
+                                                                     </div>
+                                                                     <div *ngIf="age.errors.pattern">
+                                                                        Age not a valid 
+                                                                        </div>
+                                                                     </div>
+                                                              </div>
+                                                            </div>
+                                                    
+                                                        <div class="form-group">
+                                                          <label for="staticEmail">Place Found</label>
+                                                          <div>
+                                                          <input type="text" class="form-control" name="place" required ngModel id="place" #place="ngModel">
+                                                          <div *ngIf="place.invalid && (place.dirty || place .touched)"class="alert alert-danger">
+                                                    
+                                                              <div *ngIf="place.errors.required">
+                                                               Place Is Required
+                                                               </div>
+                                                               </div>
+                                                        </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="staticEmail">Special Characteristics</label>
+                                                            <div>
+                                                              <textarea class="form-control" ngModel name="details" id="details"></textarea>
+                                                            </div>
+                                                          </div>
+                                                    
+                                                         
+                                                    </fieldset>
+                                                    
+                                                    <fieldset class="bt row">
+                                                            <div class="col-md-6"><button type="submit" class="btn btn-primary col-md-12">Submit</button></div>
+                                                        <div class="col-md-6"><button type="cancel" class="btn btn-primary col-md-12" (click)="onCancel()">Cancel</button></div> 
+                                                    </fieldset>
+                                                      </form>
+                                    </div>
+                                </div>
+            
+                    </div>
+                </div>
+            </div>
+</div>

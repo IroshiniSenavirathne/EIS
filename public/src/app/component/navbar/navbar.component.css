@@ -1,0 +1,28 @@
+.bottom{
+    margin-bottom: 0px;
+}
+
+.text{
+    width:50px!important;
+    height:100px!important;
+    background-color:rgba(0, 0, 0, 0.5) !important;
+}
+
+.container-fluid{
+    background-color: #FBFAD3;
+}
+
+    .bottom{
+    margin-bottom: 0px;
+}
+
+.log:hover{
+    background-color: #80ac7b;
+}
+
+
+.text{
+    width:50px!important;
+    height:100px!important;
+    background-color:rgba(0, 0, 0, 0.5) !important;
+}
